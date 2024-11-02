@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     default: 'Next.js Portfolio Starter',
     template: '%s | Next.js Portfolio Starter',
   },
-  description: 'This is my portfolio.',
+  description: 'Quinn Brockmyre.',
   openGraph: {
     title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    description: 'Quinn Brockmyre.',
     url: baseUrl,
     siteName: 'My Portfolio',
     locale: 'en_US',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-}
+} 
 
 const cx = (...classes) => classes.filter(Boolean).join(' ')
 
