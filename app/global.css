@@ -6,6 +6,18 @@
 }
 
 :root {
+  --primary-color: #1a73e8;
+  --secondary-color: #fbbf24;
+  --background-color: #f1f5f9;
+  --text-color: #111827;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+:root {
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;
   --sh-sign: #8996a3;
