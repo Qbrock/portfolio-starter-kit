@@ -53,21 +53,23 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased mx-auto px-8 max-w-7xl mt-8">
-        <header className="mb-16">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
-              <p className="text-neutral-400 mt-2">Software Engineer</p>
+        <div className="relative">
+          <header className="mb-16 relative z-50">
+            <div className="flex justify-between items-center">
+              <div>
+                <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
+                <p className="text-neutral-400 mt-2">Software Engineer</p>
+              </div>
+              <MenuButton />
             </div>
-            <MenuButton />
-          </div>
-        </header>
-        <main className="min-w-0">
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+          </header>
+          <main className="min-w-0">
+            {children}
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
+          </main>
+        </div>
       </body>
     </html>
   )
