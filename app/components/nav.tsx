@@ -42,3 +42,27 @@ export function Navbar() {
     </div>
   )
 }
+
+export function MenuButton() {
+  return (
+    <button className="text-neutral-400 hover:text-white transition-colors">
+      <svg
+        className="w-6 h-6 transition-transform duration-300 ease-in-out transform hover:scale-110"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4 6h16M4 12h16M4 18h16"
+          className="transition-opacity duration-300"
+        />
+      </svg>
+    </button>
+  )
+}
+
+

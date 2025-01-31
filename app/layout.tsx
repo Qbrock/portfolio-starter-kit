@@ -2,7 +2,7 @@ import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Navbar } from './components/nav'
+import { Navbar, MenuButton } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
@@ -59,9 +59,7 @@ export default function RootLayout({
               <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
               <p className="text-neutral-400 mt-2">Software Engineer</p>
             </div>
-            <button className="text-neutral-400 hover:text-white transition-colors">
-              Menu
-            </button>
+            <MenuButton />
           </div>
         </header>
         <main className="min-w-0">
