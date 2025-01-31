@@ -34,12 +34,17 @@ export default function Page() {
   ]
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pointer-events-none">
       <section className="space-y-4">
-        <h2 className="text-2xl font-bold bg-black bg-opacity-80 inline-block px-2 py-1 rounded">Technologies</h2>
+        <h2 className="text-2xl font-bold bg-black bg-opacity-80 inline-block px-2 py-1 rounded pointer-events-auto">
+          Technologies
+        </h2>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
-            <span key={tech.name} className="bg-black bg-opacity-80 px-3 py-1 rounded-full">
+            <span 
+              key={tech.name} 
+              className="bg-black bg-opacity-80 px-3 py-1 rounded-full pointer-events-auto"
+            >
               {tech.icon} {tech.name}
             </span>
           ))}
@@ -51,7 +56,7 @@ export default function Page() {
           <a
             key={section.title}
             href={section.link}
-            className="group block p-6 bg-black bg-opacity-80 rounded-lg hover:bg-opacity-90 transition-all"
+            className="group block p-6 bg-black bg-opacity-80 rounded-lg hover:bg-opacity-90 transition-all pointer-events-auto"
           >
             <h3 className="text-xl font-semibold mb-2 flex items-center">
               {section.title}
@@ -61,10 +66,6 @@ export default function Page() {
           </a>
         ))}
       </section>
-
-      <div className="pt-8 text-neutral-400 bg-black bg-opacity-80 inline-block px-2 py-1 rounded">
-        San Francisco, CA
-      </div>
     </div>
   )
 }

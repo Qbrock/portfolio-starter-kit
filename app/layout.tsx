@@ -48,36 +48,40 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-white bg-black',
+        'text-white bg-[#0a0a0a]',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
       <body className="antialiased mx-auto px-8 max-w-7xl mt-8">
         {/* Background boxes fill entire viewport */}
-        <div className="fixed inset-0 w-screen h-screen overflow-hidden">
+        <div className="fixed inset-0 w-screen h-screen overflow-hidden pointer-events-auto">
           <Boxes className="opacity-100" />
         </div>
 
         {/* Content with solid backgrounds only for text and buttons */}
-        <div className="relative">
+        <div className="relative pointer-events-none">
           <header className="mb-16">
             <div className="flex justify-between items-center">
-              <div className="bg-black bg-opacity-80 p-2 rounded-lg">
+              <div className="bg-black bg-opacity-80 p-2 rounded-lg pointer-events-auto">
                 <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
-                <p className="text-neutral-400 mt-2">Software Engineer</p>
+                <p className="text-neutral-400 mt-2">
+                  Software Engineer <span className="mx-2">•</span> San Francisco, CA
+                </p>
               </div>
-              <div className="bg-black bg-opacity-80 rounded-lg">
+              <div className="bg-black bg-opacity-80 rounded-lg pointer-events-auto">
                 <MenuButton />
               </div>
             </div>
           </header>
           <main className="min-w-0">
-            {/* Add background to main content sections */}
             <div className="space-y-8">
-              {children}
+              {/* Make only the interactive elements receive pointer events */}
+              <div className="pointer-events-auto">
+                {children}
+              </div>
             </div>
-            <div className="bg-black bg-opacity-80 mt-8">
+            <div className="bg-black bg-opacity-80 mt-8 pointer-events-auto">
               <Footer />
             </div>
             <Analytics />
