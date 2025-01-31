@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import { Boxes } from './components/ui/background-boxes'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -53,22 +54,30 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased mx-auto px-8 max-w-7xl mt-8">
-        <div className="relative">
-          <header className="mb-16 relative z-50">
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
-                <p className="text-neutral-400 mt-2">Software Engineer</p>
+        <div className="relative min-h-screen">
+          {/* Background */}
+          <div className="fixed inset-0 w-full h-full">
+            <Boxes className="opacity-20" />
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10">
+            <header className="mb-16 relative z-50">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
+                  <p className="text-neutral-400 mt-2">Software Engineer</p>
+                </div>
+                <MenuButton />
               </div>
-              <MenuButton />
-            </div>
-          </header>
-          <main className="min-w-0">
-            {children}
-            <Footer />
-            <Analytics />
-            <SpeedInsights />
-          </main>
+            </header>
+            <main className="min-w-0">
+              {children}
+              <Footer />
+              <Analytics />
+              <SpeedInsights />
+            </main>
+          </div>
         </div>
       </body>
     </html>
