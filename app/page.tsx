@@ -34,30 +34,24 @@ export default function Page() {
   ]
 
   return (
-    <div className="space-y-16">
-      {/* Technologies Section */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-6">Technologies</h2>
-        <div className="flex flex-wrap gap-4">
+    <div className="space-y-8">
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold bg-black bg-opacity-80 inline-block px-2 py-1 rounded">Technologies</h2>
+        <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
-            <div
-              key={tech.name}
-              className="flex items-center space-x-2 bg-neutral-900 px-4 py-2 rounded-md"
-            >
-              <span className="text-xl">{tech.icon}</span>
-              <span className="text-neutral-200">{tech.name}</span>
-            </div>
+            <span key={tech.name} className="bg-black bg-opacity-80 px-3 py-1 rounded-full">
+              {tech.icon} {tech.name}
+            </span>
           ))}
         </div>
       </section>
 
-      {/* Navigation Sections */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sections.map((section) => (
           <a
             key={section.title}
             href={section.link}
-            className="group block p-6 border border-neutral-800 rounded-lg hover:border-neutral-700 transition-colors"
+            className="group block p-6 bg-black bg-opacity-80 rounded-lg hover:bg-opacity-90 transition-all"
           >
             <h3 className="text-xl font-semibold mb-2 flex items-center">
               {section.title}
@@ -68,8 +62,7 @@ export default function Page() {
         ))}
       </section>
 
-      {/* Location */}
-      <div className="pt-8 text-neutral-400">
+      <div className="pt-8 text-neutral-400 bg-black bg-opacity-80 inline-block px-2 py-1 rounded">
         San Francisco, CA
       </div>
     </div>

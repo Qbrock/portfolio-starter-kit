@@ -54,30 +54,35 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased mx-auto px-8 max-w-7xl mt-8">
-        <div className="relative min-h-screen">
-          {/* Background */}
-          <div className="fixed inset-0 w-full h-full">
-            <Boxes className="opacity-20" />
-          </div>
+        {/* Background boxes fill entire viewport */}
+        <div className="fixed inset-0 w-screen h-screen overflow-hidden">
+          <Boxes className="opacity-100" />
+        </div>
 
-          {/* Content */}
-          <div className="relative z-10">
-            <header className="mb-16 relative z-50">
-              <div className="flex justify-between items-center">
-                <div>
-                  <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
-                  <p className="text-neutral-400 mt-2">Software Engineer</p>
-                </div>
+        {/* Content with solid backgrounds only for text and buttons */}
+        <div className="relative">
+          <header className="mb-16">
+            <div className="flex justify-between items-center">
+              <div className="bg-black bg-opacity-80 p-2 rounded-lg">
+                <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
+                <p className="text-neutral-400 mt-2">Software Engineer</p>
+              </div>
+              <div className="bg-black bg-opacity-80 rounded-lg">
                 <MenuButton />
               </div>
-            </header>
-            <main className="min-w-0">
+            </div>
+          </header>
+          <main className="min-w-0">
+            {/* Add background to main content sections */}
+            <div className="space-y-8">
               {children}
+            </div>
+            <div className="bg-black bg-opacity-80 mt-8">
               <Footer />
-              <Analytics />
-              <SpeedInsights />
-            </main>
-          </div>
+            </div>
+            <Analytics />
+            <SpeedInsights />
+          </main>
         </div>
       </body>
     </html>
