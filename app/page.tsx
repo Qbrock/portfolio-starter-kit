@@ -1,26 +1,77 @@
-import { BlogPosts } from 'app/components/posts'
-
 export default function Page() {
+  const technologies = [
+    { name: 'React', icon: '⚛️' },
+    { name: 'Java', icon: '☕' },
+    { name: 'Python', icon: '🐍' },
+    { name: 'Rust', icon: '🦀' },
+    { name: 'TypeScript', icon: '📘' },
+    { name: 'C', icon: '⚙️' },
+    { name: 'Go', icon: '🔵' },
+    { name: 'RISC-V', icon: '💻' }
+  ]
+
+  const sections = [
+    {
+      title: 'Experience',
+      description: 'View my past career experience, with showcases of work.',
+      link: '/experience'
+    },
+    {
+      title: 'Projects',
+      description: 'Explore a collection of my personal projects.',
+      link: '/projects'
+    },
+    {
+      title: 'About',
+      description: 'Learn more about my background, skills, and interests.',
+      link: '/about'
+    },
+    {
+      title: 'Contact',
+      description: 'Reach out to me for any inquiries or collaborations.',
+      link: '/contact'
+    }
+  ]
+
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Quinn Brockmyre
-      </h1>
-      <p className="mb-4">
-        {`My name is Quinn Brockmyre, a computer science student at the University of San Francisco, set to graduate with a Bachelor of Science in Computer Science in May 2025. 
-        I am skilled in programming languages like Java, Python, Rust, C, Go, and RISC-V Assembly, with a strong foundation in data structures, operating systems, compilers, and systems security. 
-        Alongside my technical skills, I bring effective communication, problem-solving abilities, and experience in project coordination. 
-        At USFCA, I co-founded the Compsigh Club, where I helped establish a tech community hub on campus. 
-        I organized the inaugural "Deploy 23" Hackathon, which drew over 50 participants and fostered collaboration and practical tech skills. 
-        Through partnerships with other clubs and expanding with industry partners, I aim to continue growing the club’s impact on the USFCA tech scene. 
-        On he technical side, I developed a digital version of the "Five Crowns" card game in Java, showcasing my skills in design, coding, and debugging. 
-        I also participated in the 2024 DonsHack hackathon, where my team and I created a project to improve waste sorting.
-        Currently, I work as a tutor for the Computer Science Department and as a teaching assistant for Professor Greg Benson’s Systems Foundations course. 
-        My previous experience includes working as a laser machine operator at LFI Inc., where I honed my attention to detail, ensuring product quality by identifying and resolving machine errors before they impacted production. `}
-      </p>
-      <div className="my-8">
-        <BlogPosts />
+    <div className="space-y-16">
+      {/* Technologies Section */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-6">Technologies</h2>
+        <div className="flex flex-wrap gap-4">
+          {technologies.map((tech) => (
+            <div
+              key={tech.name}
+              className="flex items-center space-x-2 bg-neutral-900 px-4 py-2 rounded-md"
+            >
+              <span className="text-xl">{tech.icon}</span>
+              <span className="text-neutral-200">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Navigation Sections */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {sections.map((section) => (
+          <a
+            key={section.title}
+            href={section.link}
+            className="group block p-6 border border-neutral-800 rounded-lg hover:border-neutral-700 transition-colors"
+          >
+            <h3 className="text-xl font-semibold mb-2 flex items-center">
+              {section.title}
+              <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            </h3>
+            <p className="text-neutral-400">{section.description}</p>
+          </a>
+        ))}
+      </section>
+
+      {/* Location */}
+      <div className="pt-8 text-neutral-400">
+        San Francisco, CA
       </div>
-    </section>
+    </div>
   )
 }

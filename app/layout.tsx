@@ -11,15 +11,15 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Quinn Brockmyre',
+    template: '%s | Quinn Brockmyre',
   },
-  description: 'Quinn Brockmyre.',
+  description: 'Quinn Brockmyre - Computer Science Student at USFCA',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'Quinn Brockmyre.',
+    title: 'Quinn Brockmyre',
+    description: 'Computer Science Student at USFCA',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Quinn Brockmyre',
     locale: 'en_US',
     type: 'website',
   },
@@ -47,14 +47,24 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
+        'text-white bg-black',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
+      <body className="antialiased mx-auto px-8 max-w-7xl mt-8">
+        <header className="mb-16">
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-4xl font-bold">Quinn Brockmyre</h1>
+              <p className="text-neutral-400 mt-2">Software Engineer</p>
+            </div>
+            <button className="text-neutral-400 hover:text-white transition-colors">
+              Menu
+            </button>
+          </div>
+        </header>
+        <main className="min-w-0">
           {children}
           <Footer />
           <Analytics />
