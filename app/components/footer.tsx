@@ -6,7 +6,7 @@ export default function Footer() {
         <a href="https://github.com/Qbrock" target="_blank" rel="noopener noreferrer">
           GH
         </a>
-        <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+        <a href="https://linkedin.com/in/qabrockmyre" target="_blank" rel="noopener noreferrer">
           LI
         </a>
       </div>

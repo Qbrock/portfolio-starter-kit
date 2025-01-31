@@ -9,15 +9,15 @@ export default function ContactPage() {
         
         <div className="space-y-4">
           <a 
-            href="mailto:your.email@example.com"
+            href="mailto:qabrockmyre@dons.usfca.edu"
             className="block p-4 border border-neutral-800 rounded-lg hover:border-neutral-700 transition-colors"
           >
             <h3 className="font-medium">Email</h3>
-            <p className="text-neutral-400">your.email@example.com</p>
+            <p className="text-neutral-400">qabrockmyre@dons.usfca.edu</p>
           </a>
           
           <a 
-            href="https://linkedin.com/in/your-profile"
+            href="https://linkedin.com/in/qabrockmyre"
             target="_blank"
             rel="noopener noreferrer"
             className="block p-4 border border-neutral-800 rounded-lg hover:border-neutral-700 transition-colors"
