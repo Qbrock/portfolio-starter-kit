@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
-import { AuroraBackgroundDemo } from './components/aurora'
+import { AuroraBackground } from './components/aurora'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -54,8 +54,8 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased mx-auto px-8 max-w-7xl mt-8">
-        <AuroraBackgroundDemo />
-        <div className="relative">
+        <AuroraBackground />
+        <div className="relative z-10">
           <header className="mb-16">
             <div className="flex justify-between items-center">
               <div>
