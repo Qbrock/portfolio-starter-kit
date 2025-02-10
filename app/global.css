@@ -15,15 +15,6 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
-  --sky-300: rgb(100, 149, 237);
-  --pink-300: rgb(188, 143, 143);
-  --green-300: rgb(144, 238, 144);
-  --yellow-300: rgb(240, 230, 140);
-  --red-300: rgb(205, 92, 92);
-  --purple-300: rgb(147, 112, 219);
-  --blue-300: rgb(70, 130, 180);
-  --indigo-300: rgb(106, 90, 205);
-  --violet-300: rgb(138, 43, 226);
 }
 
 @media (prefers-color-scheme: dark) {
