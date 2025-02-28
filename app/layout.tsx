@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
-import { AuroraBackground } from './components/aurora'
+import { AuroraBackground } from './components/AuroraBackground'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -48,34 +48,34 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-white',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
-      <body className="antialiased mx-auto px-8 max-w-7xl mt-8">
-        <AuroraBackground />
-        <div className="relative z-10">
-          <header className="mb-16">
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-4xl font-bold text-[#383838]">Quinn Brockmyre</h1>
-                <p className="text-neutral-400 mt-2 text-[#383838]">
-                  Software Engineer <span className="mx-2 text-[#383838]">•</span> San Francisco, CA
-                </p>
+      <body className="antialiased">
+        <AuroraBackground>
+          <div className="relative z-10 mx-auto px-8 max-w-7xl mt-8">
+            <header className="mb-16">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h1 className="text-4xl font-bold text-[#383838]">Quinn Brockmyre</h1>
+                  <p className="text-neutral-400 mt-2 text-[#383838]">
+                    Software Engineer <span className="mx-2 text-[#383838]">•</span> San Francisco, CA
+                  </p>
+                </div>
+                <div>
+                  <MenuButton />
+                </div>
               </div>
-              <div>
-                <MenuButton />
-              </div>
-            </div>
-          </header>
-          <main className="min-w-0">
-            {children}
-            <Footer />
-            <Analytics />
-            <SpeedInsights />
-          </main>
-        </div>
+            </header>
+            <main className="min-w-0">
+              {children}
+              <Footer />
+              <Analytics />
+              <SpeedInsights />
+            </main>
+          </div>
+        </AuroraBackground>
       </body>
     </html>
   )
